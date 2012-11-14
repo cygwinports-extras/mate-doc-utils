@@ -1,0 +1,20 @@
+inherit mate
+
+NAME="mate-doc-utils"
+VERSION=1.4.0
+RELEASE=1
+CATEGORY="MATE"
+SUMMARY="MATE documentation build tools and stylesheets"
+DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
+and attractive desktop to Linux users using traditional metaphors."
+REQUIRES="docbook-xml412 docbook-xml42 docbook-xml43 docbook-xml44 gettext-devel libxml2 libxslt rarian xml2po"
+
+DIFF_EXCLUDES="Makefile.in.in"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	# conflicts with gnome-doc-utils
+	find ${D}/usr/ -name 'xml2po*' | xargs rm -fr
+}
