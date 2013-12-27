@@ -1,7 +1,7 @@
 inherit mate
 
 NAME="mate-doc-utils"
-VERSION=1.6.1
+VERSION=1.6.2
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE documentation build tools and stylesheets"
